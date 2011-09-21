@@ -2,7 +2,7 @@ Gonna use sql databse
 
 
 SECTIONS to be done
--------------------
+--------------------
 model (Roy)
 	- database structure
 	- database backend
@@ -14,3 +14,13 @@ view (Bill)
 template (DG)
 	- css and javascript
 	- web template itself
+	
+APP(s)
+--------------------
+appIn
+	- upon input
+	- generates the hash value of the link
+	- and saves all the data in to the database
+	- upon going to the hashed link
+	- Reads data from the database
+	- populates the template
