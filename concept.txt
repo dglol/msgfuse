@@ -1,0 +1,10 @@
+features
+	- transfer msg in a very safe and descrite way, person can open based on conditionals
+		- A very CONDITIONAL WAY
+		- i.e. time (at least)
+		- starting date and a destruction date.
+		- fully annonymous
+		- public for now
+	
+advanced features
+	- use fb api to link or smth
