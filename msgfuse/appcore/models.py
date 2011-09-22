@@ -11,7 +11,7 @@ class Messages(models.Model):
 		# foreign key to link the user whic is to be implmented
 	dateCreated = models.DateTimeField()
 		# the date which the msg is created
-	hashCode = mocdels.CharField();
+	hashCode = models.CharField(max_length = 255);
 		# the hash code of the msg used for the site, 
 		# unqie key to be set later
 
@@ -29,11 +29,11 @@ class MessageConditions(models.Model):
 		
 # the following is not used...
 class User(models.Model):
-	userName = models.CharField(primary_key = True, max_length = max)
+	userName = models.CharField(primary_key = True, max_length = 255)
 		# this is a primary key of users, which is the user name
 		# the user name have to be unique, this is to be validated in the code
-	userPass = models.CharField()
+	userPass = models.CharField(max_length = 255)
 		# this is the password storage of the users which is to be set to private or 
 		# a different file later on for privacy/protection reasons
-	regDate = models.DateTimeField()
+	regDate = models.DateTimeField(max_length = max)
 		# the registeration date of the user
