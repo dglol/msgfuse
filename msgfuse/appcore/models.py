@@ -9,23 +9,25 @@ class Messages(models.Model):
 		# do NOT un-comment the above line, this is to show the default automated pk generation
 	user = models.ForeignKey('User')
 		# foreign key to link the user whic is to be implmented
-	dateCreated = models.DateTimeField()
+	dateCreated = models.DateTimeField(null=True)
 		# the date which the msg is created
-	hashCode = models.CharField(max_length = 255);
+	hashCode = models.CharField(max_length = 255)
 		# the hash code of the msg used for the site, 
-		# unqie key to be set later
+		# unqie key to be set late
 
-class MessageConditions(models.Model):
-	initDate = models.DateTimeField()
+class MessageProperties(models.Model):
+	initDate = models.DateTimeField(null=True)
 		# date which the message is enabled
-	endDate = models.DateTimeField()
+	endDate = models.DateTimeField(null=True)
 		# date which the message will be disabled
-	RequiredClickNumber = models.IntegerField(default=0)
+	requiredClickNumber = models.IntegerField(null=True, default=0)
 		# required clicks to unlock a message
-	ClosingClickNumber = models.IntegerField(default=-1)
+	closingClickNumber = models.IntegerField(null=True, default=-1)
 		# amount of click which will disable a message
 	messages = models.ForeignKey('Messages')
 		# foreign key to link the message and message conditions
+	messageClicks = models.IntegerField(null=True, default=0)
+		# the amount of clicks the msg has received.
 		
 # the following is not used...
 class User(models.Model):
