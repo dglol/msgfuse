@@ -3,7 +3,7 @@
 from django.db import models
 
 class Messages(models.Model):
-	content = models.TextField(default="No on ever inputed text in this msg, or if implmented, this is an error ==")
+	content = models.TextField(default="No one ever inputed text in this msg, or if implmented, this is an error ==")
 		# this is the content if the message
 	#id = models.AutoField(primary_key=True)
 		# do NOT un-comment the above line, this is to show the default automated pk generation
