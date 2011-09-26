@@ -9,7 +9,7 @@ model (Roy)
 view (Bill)
 	- structure of the site
 	- feature scripting
-		- the site cde
+		- the site code
 	- dispatcher
 template (DG)
 	- css and javascript
