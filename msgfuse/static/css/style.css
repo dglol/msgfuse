@@ -61,33 +61,33 @@ h1, h2, h3, p {
 	font-family: 'Lobster', serif;
 	font-weight: normal;
 	letter-spacing: 1px;
-	padding: 20px;
 }
 
 p {
-	color: #000;
+	color: #554D46;
 	font-family: 'Open Sans', sans-serif;
-	font-size: 2em;
-	padding: 5px;
+	font-size: 21.3px;
+	font-height: 24px;
+	padding: 12px;
 	letter-spacing: 0;
 }
 
 h1 {
 	color: #CCFF99;
-	font-size: 5em;
+	font-size: 48px;
 	text-shadow: 0 5px 0 rgba(255,255,255,0.3);
 }
 
 h2 {
 	color: #E9766C;
-	font-size: 3em;
+	font-size: 48px;
 	text-shadow: 0 5px 0 rgba(255,255,255,0.3);
 }
 
 /* DIVS */
 
 #wrapper {
-    width: 60%;
+    width: 55%;
     max-width: 960px;
     margin: 0 auto;
     margin-top: 20px;
@@ -95,8 +95,8 @@ h2 {
 
 #panel {
     position: relative;
-    background-color: rgba(255,255,255,0.3);
-    padding: 20px;
+    background-color: rgba(255,255,255,0.5);
+    padding: 12px;
 }
 
 /* MISC */
@@ -120,22 +120,33 @@ button {
     width: 100px;
 }
 
-button.boom {
+button#boom {
+    background: -moz-linear-gradient(90deg, #E9766C, #F5F5F5) repeat scroll 0 0 transparent;
+    font-size: 24px;
     float: none;
+    display: block;
+    padding: 10px;
     margin: 0 auto;
+    margin-top: 26.5px;
+    margin-bottom: 10px;
+    width: 150px;
 }
 
 hr {
-    border-top: 1px dashed #FFF;
-    border-bottom: 4px solid #FFF;
+    border-top: 1px dashed #6CDFEA;
+    border-bottom: 5px solid #6CDFEA;
+    margin-top: 48px;
+    margin-bottom: 0px;
 }
 
 hr.bottom {
-    border-top: 4px solid #FFF;
-    border-bottom: 1px dashed #FFF;
+    border-top: 5px solid #6CDFEA;
+    border-bottom: 1px dashed #6CDFEA;
+    margin-top: 0px;
 }
 
 span.deco {
+	color: #E9766C;
 	font-family: 'Lobster', serif;
 	font-weight: normal;
 	letter-spacing: 1px;
