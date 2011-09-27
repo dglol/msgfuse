@@ -8,8 +8,10 @@ class Messages(models.Model):
 		# this is the content if the message
 	#id = models.AutoField(primary_key=True)
 		# do NOT un-comment the above line, this is to show the default automated pk generation
-	user = models.ForeignKey('User')
+	#user = models.ForeignKey('User')
 		# foreign key to link the user whic is to be implmented
+		# uncomment if we ever decide to use the users table
+		# but the this is a FK, so it has to be not null
 	dateCreated = models.DateTimeField(null=True)
 		# the date which the msg is created
 	hashCode = models.CharField(max_length = 255)
