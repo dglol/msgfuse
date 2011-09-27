@@ -2,15 +2,14 @@
 
 {% block content %}
             <p><span class="deco">1.</span> Enter message</p>
-            <form action="." method="post">
-                {{ msgform.as_p }}
-            <input type="submit" value="ignite" />
-            </form>
+            <input id="msg" type="text">
             <p><span class="deco">2.</span> Filter</p>
             <button type="button">Time</button>
             <button type="button">Views</button>
             <div class="clear"></div>
             <p><span class="deco">3.</span> Configure</p>
-{% endblock %}
+{% endblock}
 
-
+{% block button %}
+        <button type="submit" id="boom">Ignite</button>
+{% end block %}

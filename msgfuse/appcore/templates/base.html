@@ -15,11 +15,13 @@
         <hr>
         <div id="panel">
             {% block content %}
-            {% endblock %}
+            {% end block %}
         </div>
         <hr class="bottom">
         {% block context %}
-        {% endblock %}
+        {% end block %}
+        {% block button %}
+        {% end block %}
     </div>
 </body>
 </html>
