@@ -1,6 +1,7 @@
 # this is an attempt of a model file
 
 from django.db import models
+from django import forms
 
 class Messages(models.Model):
 	content = models.TextField(default="No one ever inputed text in this msg, or if implmented, this is an error ==")
