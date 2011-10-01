@@ -8,8 +8,8 @@ class DateForm(forms.Form):
 	dateValue = forms.DateField()
 
 class ViewForm(forms.Form):
-	RequiredViews = forms.CharField(label="", max_length=50)
-	ClosingViews = forms.CharField(label="", max_length=50)
+	RequiredViews = forms.CharField(label="", max_length=8)
+	ClosingViews = forms.CharField(label="", max_length=8)
 	
 class MessageForm(forms.Form):
-	msgValue = forms.CharField(label="", max_length=500)
+	msgValue = forms.CharField(label="", widget=forms.Textarea, max_length=500)
