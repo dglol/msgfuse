@@ -3,6 +3,7 @@
 {% block content %}
             <p><span class="deco">1.</span> Enter message</p>
             <form action="." method="post">
+            {% csrf_token %}
                 {{ msgform.as_p }}
             <input type="submit" value="ignite" />
             </form>

@@ -17,8 +17,6 @@ class Messages(models.Model):
 	hashCode = models.CharField(max_length = 255)
 		# the hash code of the msg used for the site, 
 		# unqie key to be set late
-
-class MessageProperties(models.Model):
 	initDate = models.DateTimeField(null=True)
 		# date which the message is enabled
 	endDate = models.DateTimeField(null=True)
@@ -27,18 +25,18 @@ class MessageProperties(models.Model):
 		# required clicks to unlock a message
 	closingClickNumber = models.IntegerField(null=True, default=-1)
 		# amount of click which will disable a message
-	messages = models.ForeignKey('Messages')
+#	messages = models.ForeignKey('Messages')
 		# foreign key to link the message and message conditions
 	messageClicks = models.IntegerField(null=True, default=0)
 		# the amount of clicks the msg has received.
 		
 # the following is not used...
-class User(models.Model):
-	userName = models.CharField(primary_key = True, max_length = 255)
+#class User(models.Model):
+#	userName = models.CharField(primary_key = True, max_length = 255)
 		# this is a primary key of users, which is the user name
 		# the user name have to be unique, this is to be validated in the code
-	userPass = models.CharField(max_length = 255)
+#	userPass = models.CharField(max_length = 255)
 		# this is the password storage of the users which is to be set to private or 
 		# a different file later on for privacy/protection reasons
-	regDate = models.DateTimeField(max_length = max)
+#	regDate = models.DateTimeField(max_length = max)
 		# the registeration date of the user
