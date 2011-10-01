@@ -1,6 +1,4 @@
-import sys
-import random
-
+import sys, random
 charset = 'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789'
 
 def generate():
