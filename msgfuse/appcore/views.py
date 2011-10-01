@@ -1,5 +1,5 @@
 from django.core.context_processors import csrf
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
 from appcore.models import *
 from appcore.forms import *
 from scripts import rsg
@@ -36,7 +36,18 @@ def homepage(request):
         'viewform': viewform,
         })
             
-# def linkpage(request, Hash_id):
+def linkpage(request, hashCode):
+    try:
+        r = Messages.objects.get(hashCode=hashCode)
+    except:
+        raise Http404
+    r.messageClicks += 1
+    r.save()
+    if r.requiredClickNumber <= r.messageClicks <= r.closingClickNumber:
+        return HttpResponse("<p>%s</p>" %r.content)
+    else:
+        return HttpResponse("<p>Come back another time!</p>")
+    
 
 
 

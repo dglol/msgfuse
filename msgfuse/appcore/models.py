@@ -31,7 +31,7 @@ class Messages(models.Model):
 		# the amount of clicks the msg has received.
 		
 # the following is not used...
-#class User(models.Model):
+# class User(models.Model):
 #	userName = models.CharField(primary_key = True, max_length = 255)
 		# this is a primary key of users, which is the user name
 		# the user name have to be unique, this is to be validated in the code

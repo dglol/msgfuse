@@ -5,6 +5,8 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
+    (r'^$', 'appcore.views.homepage'),
+    (r'^(?P<hashCode>[a-zA-Z0-9]{5})$', 'appcore.views.linkpage'),
     # Example:
     # (r'^msgfuse/', include('msgfuse.foo.urls')),
 
