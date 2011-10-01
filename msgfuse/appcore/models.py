@@ -17,6 +17,8 @@ class Messages(models.Model):
 	hashCode = models.CharField(max_length = 255)
 		# the hash code of the msg used for the site, 
 		# unqie key to be set late
+	hashCodeAdmin = models.CharField(max_length = 255)
+	    # the hash code for the user to manage the msg
 	initDate = models.DateTimeField(null=True)
 		# date which the message is enabled
 	endDate = models.DateTimeField(null=True)
