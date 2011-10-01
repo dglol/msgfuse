@@ -4,15 +4,15 @@
             <p><span class="deco">1.</span> Enter message</p>
             <form action="." method="post">
                 {% csrf_token %}
-                    {{ msgform.as_p }}
+                    {{ msgform }}
                 <p><span class="deco">2.</span> Filter</p>
-                <p><button type="button">Time</button>
-                <button type="button">Views</button></p>
-                {% csrf_token %}
-                    {{ viewform.as_p }}
+                <button type="button">Time</button>
+                <button type="button">Views</button>
                 <div class="clear"></div>
-                <p><span class="deco">3.</span> Configure</p>
-                <input type="submit" value="ignite" />
+                <p class="config">Reveal my message after {{ viewform.RequiredViews }} views</p>
+                <p class="config">Delete my message after {{ viewform.ClosingViews }} views</p>
+                <button type="submit" id="boom">Ignite</button>
+                {{ viewform.errors }}
             </form>
 {% endblock %}
 {% block context %}
