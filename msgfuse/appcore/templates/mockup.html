@@ -1,27 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>soup</title>
+    <title>msgfuse - currently in development</title>
 	<meta charset="utf-8"/>
 	<link href="http://fonts.googleapis.com/css?family=Lobster|Open+Sans&v2" rel="stylesheet" type="text/css">
-	<link href="../static/css/style.css" rel="stylesheet" type="text/css">
+	<link href="msgfuse/static/css/style.css" rel="stylesheet" type="text/css">
 	<!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 </head>
+<header>
+</header>
 <body>
     <div id="wrapper">
-        <h2>msgfuse.com</h2>
+        <div id="announcement">
+            <p>You are currently viewing our mockup, which has no functionality. We are currently working on our code locally but will push it to this page in the upcoming weeks. You can follow our progress <a href="https://github.com/dglol/msgfuse">on github</a>.</p>
+        </div>
+        <h2>msgfuse, beta</h2>
         <hr>
         <div id="panel">
-            <p><span class="deco">1.</span> Enter a message</p>
+            <p><span class="deco">1.</span> Enter message</p>
             <input id="msg" type="text">
-            <p><span class="deco">2.</span> Select a condition</p>
+            <p><span class="deco">2.</span> Filter by</p>
             <button type="button">Time</button>
             <button type="button">Views</button>
             <div class="clear"></div>
+            <!--<p><span class="deco">3.</span> Configure</p>-->
         </div>
         <hr class="bottom">
+        <button type="submit" id="boom">Ignite</button>
     </div>
 </body>
 </html>

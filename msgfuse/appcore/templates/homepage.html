@@ -3,17 +3,17 @@
 {% block content %}
             <p><span class="deco">1.</span> Enter message</p>
             <form action="." method="post">
-            {% csrf_token %}
-                {{ msgform.as_p }}
-            <p><span class="deco">2.</span> Filter</p>
-            <p><button type="button">Time</button>
-            <button type="button">Views</button></p>
-            {% csrf_token %}
-                {{ viewform.as_p }}
-            <div class="clear"></div>
-            <p><span class="deco">3.</span> Configure</p>
-            <input type="submit" value="ignite" />
-            </from>
+                {% csrf_token %}
+                    {{ msgform.as_p }}
+                <p><span class="deco">2.</span> Filter</p>
+                <p><button type="button">Time</button>
+                <button type="button">Views</button></p>
+                {% csrf_token %}
+                    {{ viewform.as_p }}
+                <div class="clear"></div>
+                <p><span class="deco">3.</span> Configure</p>
+                <input type="submit" value="ignite" />
+            </form>
 {% endblock %}
 {% block context %}
             <p>{{hashCode}}</p>
