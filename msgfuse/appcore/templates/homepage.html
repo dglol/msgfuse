@@ -1,21 +1,25 @@
 {% extends "base.html" %}
-
 {% block content %}
             <p><span class="deco">1.</span> Enter message</p>
-            <form action="." method="post">
+            <form action="dev" method="post">
                 {% csrf_token %}
                     {{ msgform }}
                 <p><span class="deco">2.</span> Filter</p>
-                <button type="button">Time</button>
-                <button type="button">Views</button>
+                <button id="time_button" type="button">Time</button>
+                <button id="view_button" type="button">Views</button>
                 <div class="clear"></div>
-                <p class="config">Reveal my message after {{ viewform.RequiredViews }} views</p>
-                <p class="config">Delete my message after {{ viewform.ClosingViews }} views</p>
+                <p class="config" style="display: none">Reveal my message after {{ viewform.RequiredViews }} <span class="view_label" style="display: none">views</span></p>
+                <p class="config" style="display: none">Delete my message after {{ viewform.ClosingViews }} <span class="view_label" style="display: none">views</span></p>
                 <button type="submit" id="boom">Ignite</button>
-                {{ viewform.errors }}
+                {{ viewform.RequiredViews.errors }}
+                {{ viewform.ClosingViews.errors }}
             </form>
 {% endblock %}
 {% block context %}
             <p>{{hashCode}}</p>
+            <p>{{hashCodeAdmin}}</p>
 {% endblock %}
-
+{% block scripts %}
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
+        <script type="text/javascript" src="/msgfuse/static/js/boom.js"></script>
+{% endblock %}
