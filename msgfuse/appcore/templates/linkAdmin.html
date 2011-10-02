@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 
 {% block content %}
-            <p>Current number of views: {{views}}</p>
+            <p>Your Link is: {{link|urlize}}</p>
             <p>Link status: {{status}}</p>
+            <p>Current number of views: {{views}}</p>
+            <p>Link will be active between {{required}} and {{closing}} views</p>
 {% endblock %}

@@ -28,7 +28,11 @@ def homepage(request):
             content = request.POST['msgValue']
             requiredViews = request.POST['RequiredViews']
             closingViews = request.POST['ClosingViews']
-            
+            if requiredViews == '':
+                requiredViews = 0
+            if closingViews == '':
+                closingViews = 0
+                
             p = Messages(content=content,
             dateCreated=now,
             hashCode = hashCode,
@@ -38,8 +42,8 @@ def homepage(request):
             closingClickNumber=closingViews)
             
             p.save()
-            hashCode = "Your Link: msgfuse.com/%s" %hashCode
-            hashCodeAdmin = "Your Admin Link: msgfuse.com/%s" %hashCodeAdmin
+            hashCode = "www.msgfuse.com/%s" %hashCode
+            hashCodeAdmin = "www.msgfuse.com/watch/%s" %hashCodeAdmin
             
         return render_to_response('homepage.html',{
         'msgform': msgform,
@@ -81,21 +85,22 @@ def linkadmin(request, hashCode):
 
     if r.hashCodeAdmin == hashCode:
         views = '%s' %r.messageClicks
+        required = '%s' %r.requiredClickNumber
+        closing = '%s' %r.closingClickNumber
+        link = 'www.msgfuse.com/%s' %r.hashCode
         if r.requiredClickNumber <= r.messageClicks <= r.closingClickNumber:
-            return render_to_response('linkAdmin.html',{
-            'views': views,
-            'status': 'Active',
-            })
+            status = 'Active'
         elif r.closingClickNumber < r.messageClicks:
             r.delete()
-            return render_to_response('linkAdmin.html',{
-            'views': views,
-            'status': 'Link just expired! Both links will be deleted',
-            })
+            status = 'Link just expired! Both links will be deleted'
         else:    
-            return render_to_response('linkAdmin.html',{
+            status = 'Inactive'
+        return render_to_response('linkAdmin.html',{
             'views': views,
-            'status': 'Inactive',
+            'status': status,
+            'link': link,
+            'required': required,
+            'closing': closing,
             })
     else:
         raise Http404
