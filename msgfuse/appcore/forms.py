@@ -13,8 +13,8 @@ class DateForm(forms.Form):
 	dateValue = forms.DateField()
 
 class ViewForm(forms.Form):
-	RequiredViews = forms.IntegerField(label="", validators = [validate_int])
-	ClosingViews = forms.IntegerField(label="", validators = [validate_int])
+	RequiredViews = forms.IntegerField(required=False, label="", validators = [validate_int])
+	ClosingViews = forms.IntegerField(required=False, label="", validators = [validate_int])
 	
 class MessageForm(forms.Form):
 	msgValue = forms.CharField(label="", widget=forms.Textarea, max_length=500, error_messages={'invalid': 'Please have a Message'})
