@@ -48,6 +48,8 @@ def homepage(request):
         return render_to_response('homepage.html',{
         'msgform': msgform,
         'viewform': viewform,
+        'linkText': 'Your link: ',
+        'linkAdmin': 'Watch your link here: ',
         'hashCode': hashCode,
         'hashCodeAdmin': hashCodeAdmin,
         })
@@ -116,5 +118,3 @@ def linkadmin(request, hashCode):
             })
     else:
         raise Http404
-
-

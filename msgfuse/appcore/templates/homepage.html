@@ -16,8 +16,8 @@
             </form>
 {% endblock %}
 {% block context %}
-            <p>{{hashCode}}</p>
-            <p>{{hashCodeAdmin}}</p>
+            <p>{{linkText}}{{hashCode|urlize}}</p>
+            <p>{{linkAdmin}}{{hashCodeAdmin|urlize}}</p>
 {% endblock %}
 {% block scripts %}
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
