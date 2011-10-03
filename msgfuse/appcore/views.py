@@ -31,7 +31,7 @@ def homepage(request):
             if requiredViews == '':
                 requiredViews = 0
             if closingViews == '':
-                closingViews = 0
+                closingViews = -1
                 
             p = Messages(content=content,
             dateCreated=now,
@@ -68,9 +68,14 @@ def linkpage(request, hashCode):
     if r.hashCode == hashCode:    
         r.messageClicks += 1
         r.save()
-        if r.requiredClickNumber <= r.messageClicks <= r.closingClickNumber:
+        if r.closingClickNumber == -1:
+            closingNumber = 2147483647
+        else:
+            closingNumber = r.closingClickNumber
+            
+        if r.requiredClickNumber <= r.messageClicks <= closingNumber:
             return render_to_response('linkpage.html',{'content': '%s' %r.content})
-        elif r.closingClickNumber < r.messageClicks:
+        elif closingNumber < r.messageClicks:
             return render_to_response('linkpage.html',{'content': 'Link just expired!'})
         else:    
             return render_to_response('linkpage.html',{'content': 'Comeback Another Time!'}) 
@@ -86,15 +91,22 @@ def linkadmin(request, hashCode):
     if r.hashCodeAdmin == hashCode:
         views = '%s' %r.messageClicks
         required = '%s' %r.requiredClickNumber
-        closing = '%s' %r.closingClickNumber
+        if r.closingClickNumber == -1:
+            closingNumber = 214748364
+            closing = 'infinit'
+        else:
+            closingNumber = r.closingClickNumber
+            closing = '%s' %r.closingClickNumber
         link = 'www.msgfuse.com/%s' %r.hashCode
-        if r.requiredClickNumber <= r.messageClicks <= r.closingClickNumber:
+        
+        if r.requiredClickNumber <= r.messageClicks <= closingNumber:
             status = 'Active'
-        elif r.closingClickNumber < r.messageClicks:
+        elif closingNumber < r.messageClicks:
             r.delete()
             status = 'Link just expired! Both links will be deleted'
         else:    
             status = 'Inactive'
+            
         return render_to_response('linkAdmin.html',{
             'views': views,
             'status': status,
