@@ -1,11 +1,14 @@
 {% extends "base.html" %}
+{% block announcement %}
+            <p>Msgfuse entered pre-alpha! We are currently working on more features and making the page much more intuitive so we would appreciate any feedback at <a href="mailto:boom@msgfuse.com">boom@msgfuse.com</a>. You can also follow our progress and learn more <a href="https://github.com/dglol/msgfuse">on github</a>.</p>
+{% endblock %}
 {% block content %}
-            <p><span class="deco">1.</span> Enter message</p>
-            <form action="dev" method="post">
+            <form action="." method="post">
+                <p><span class="deco">1.</span> Enter a message</p>
                 {% csrf_token %}
                     {{ msgform }}
-                <p><span class="deco">2.</span> Filter</p>
-                <button id="time_button" type="button">Time</button>
+                <p><span class="deco">2.</span> Customize</p>
+                <!--<button id="time_button" type="button">Time</button>-->
                 <button id="view_button" type="button">Views</button>
                 <div class="clear"></div>
                 <p class="config" style="display: none">Reveal my message after {{ viewform.RequiredViews }} <span class="view_label" style="display: none">views</span></p>
