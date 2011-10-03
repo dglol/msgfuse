@@ -11,6 +11,8 @@ def homepage(request):
     now = datetime.datetime.now()
     hashCode = ""
     hashCodeAdmin = ""
+    linkText = ""
+    linkAdminText = ""
     if request.method =='POST':
         msgform = MessageForm(request.POST)
         viewform = ViewForm(request.POST)
@@ -42,14 +44,16 @@ def homepage(request):
             closingClickNumber=closingViews)
             
             p.save()
+            linkText = 'Your link: '
+            linkAdminText = 'Watch your link here: '
             hashCode = "www.msgfuse.com/%s" %hashCode
             hashCodeAdmin = "www.msgfuse.com/watch/%s" %hashCodeAdmin
             
         return render_to_response('homepage.html',{
         'msgform': msgform,
         'viewform': viewform,
-        'linkText': 'Your link: ',
-        'linkAdmin': 'Watch your link here: ',
+        'linkText': linkText,
+        'linkAdmin': linkAdminText,
         'hashCode': hashCode,
         'hashCodeAdmin': hashCodeAdmin,
         })
