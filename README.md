@@ -2,6 +2,17 @@
 
 **Msgfuse** generates a link holding a message whose content are revealed only if the author's criterias are met.
 
+## Status ##
+
+Our working prototype is now live and viewable at <www.msgfuse.com>. We hope to begin working on more functionality after our exams.
+
+## TODO ##
+
+- More intuitive user experience. Perhaps having each step as a horizontal tab would work better.
+- More conditionals, a timer and geolocation are good next steps.
+- Graphics (logo, progress bar, ribbons for aforementioned horizontal tabs) for the site
+- Perhaps a real-time mode where the message's visibility is directly based on what's happening in the database
+
 ## Licence ##
 
 (MIT)
